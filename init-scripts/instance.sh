@@ -1,4 +1,6 @@
-set -euxo
+set -eo pipefail
+export MAN_DISABLE=1
+export DEBIAN_FRONTEND=noninteractive
 
 # Install docker
 
