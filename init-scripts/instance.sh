@@ -2,6 +2,10 @@ set -eo pipefail
 export MAN_DISABLE=1
 export DEBIAN_FRONTEND=noninteractive
 
+USER=maalsi
+DEPLOY_PATH=/srv/cesi-test-cicd
+REPO_URL=https://github.com/togetherforgood/cesi-test-cicd.git
+
 # Install docker
 
 sudo apt update
@@ -15,9 +19,6 @@ sudo usermod -aG docker ${USER}
 docker --version
 
 # Prepare deployment directory
-
-DEPLOY_PATH=/srv/cesi-test-cicd
-REPO_URL=https://github.com/togetherforgood/cesi-test-cicd.git
 
 sudo mkdir -p ${DEPLOY_PATH}
 sudo chmod ${USER} ${DEPLOY_PATH}
